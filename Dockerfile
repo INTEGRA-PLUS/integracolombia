@@ -18,6 +18,9 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+# Ensure public/ exists even if the repo committed it empty (git skips empty dirs)
+RUN mkdir -p public
+
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
