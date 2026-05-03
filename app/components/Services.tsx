@@ -74,15 +74,15 @@ export default function Services() {
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-ink-950 via-ink-900 to-ink-950" />
         <div className="absolute inset-0 grid-bg mask-fade-y opacity-40" />
-        <div className="absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-white/[0.04] blur-3xl" />
-        <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-white/[0.03] blur-3xl" />
+        <div className="absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-mint-500/[0.08] blur-3xl" />
+        <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-mint-400/[0.06] blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <div className="mx-auto mb-20 max-w-3xl text-center">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.22em] text-ink-300">
-              <span className="h-1 w-1 rounded-full bg-white" />
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-mint-300/25 bg-white/[0.03] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.22em] text-mint-200">
+              <span className="h-1 w-1 rounded-full bg-mint-400" />
               Capacidades
             </span>
             <h2 className="font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
@@ -105,9 +105,10 @@ export default function Services() {
 
         {/* CTA bar */}
         <Reveal delay={200}>
-          <div className="relative mt-20 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900 p-10 shadow-elevated md:p-14">
+          <div className="relative mt-20 overflow-hidden rounded-3xl border border-mint-300/20 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900 p-10 shadow-elevated md:p-14">
             <div className="pointer-events-none absolute inset-0 grid-bg opacity-30" />
-            <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+            <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-mint-500/25 blur-3xl" />
+            <div className="pointer-events-none absolute -left-16 -bottom-20 h-72 w-72 rounded-full bg-mint-400/15 blur-3xl" />
 
             <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
               <div className="max-w-2xl">
@@ -121,7 +122,7 @@ export default function Services() {
               </div>
               <a
                 href="#contacto"
-                className="group relative inline-flex shrink-0 items-center gap-3 overflow-hidden rounded-full bg-white px-7 py-4 text-sm font-semibold tracking-wide text-black shadow-glow-strong transition-transform duration-300 hover:-translate-y-0.5"
+                className="group relative inline-flex shrink-0 items-center gap-3 overflow-hidden rounded-full bg-mint-500 px-7 py-4 text-sm font-semibold tracking-wide text-ink-950 shadow-glow-strong transition-all duration-300 hover:-translate-y-0.5 hover:bg-mint-400"
               >
                 <span className="relative z-10">Solicitar demo</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
@@ -148,25 +149,25 @@ function ServiceCard({
   index: number;
 }) {
   return (
-    <article className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-ink-900/60 p-7 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-white/25 hover:bg-ink-900 hover:shadow-glow">
+    <article className="group relative h-full overflow-hidden rounded-2xl border border-mint-300/15 bg-ink-900/60 p-7 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-mint-300/45 hover:bg-ink-900 hover:shadow-glow">
       {/* spotlight */}
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-        <div className="absolute -inset-px rounded-2xl bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.16),transparent_55%)]" />
+        <div className="absolute -inset-px rounded-2xl bg-[radial-gradient(circle_at_top_left,rgba(128,214,151,0.22),transparent_55%)]" />
       </div>
 
       <div className="flex items-start justify-between">
-        <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.02] text-white shadow-inner-soft transition-all duration-500 group-hover:bg-white group-hover:text-black">
+        <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-mint-300/20 bg-gradient-to-br from-mint-500/[0.18] to-white/[0.02] text-mint-300 shadow-inner-soft transition-all duration-500 group-hover:bg-mint-500 group-hover:text-ink-950">
           {icon}
         </div>
-        <span className="font-display text-xs tracking-[0.18em] text-ink-400">
+        <span className="font-display text-xs tracking-[0.18em] text-mint-300/70">
           0{index + 1}
         </span>
       </div>
 
       <h3 className="mt-6 font-display text-xl font-semibold text-white">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-ink-300">{desc}</p>
+      <p className="mt-3 text-sm leading-relaxed text-ink-200">{desc}</p>
 
-      <div className="mt-6 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-ink-400 transition-colors duration-300 group-hover:text-white">
+      <div className="mt-6 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-mint-300/80 transition-colors duration-300 group-hover:text-mint-200">
         <span>Ver más</span>
         <span className="h-px w-6 bg-current transition-all duration-500 group-hover:w-12" />
       </div>

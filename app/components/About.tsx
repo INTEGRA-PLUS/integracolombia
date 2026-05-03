@@ -4,13 +4,13 @@ export default function About() {
   return (
     <section id="soluciones" className="relative py-32 md:py-40">
       {/* divider */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-mint-300/40 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6">
         <Reveal>
           <div className="mb-20 flex flex-col items-center text-center">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.22em] text-ink-300">
-              <span className="h-1 w-1 rounded-full bg-white" />
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-mint-300/25 bg-white/[0.03] px-3 py-1 text-[11px] font-medium uppercase tracking-[0.22em] text-mint-200">
+              <span className="h-1 w-1 rounded-full bg-mint-400" />
               Quiénes somos
             </span>
             <h2 className="font-display text-4xl font-semibold tracking-tight text-white md:text-5xl">
@@ -97,14 +97,14 @@ function Card({
   accent: "lines" | "grid";
 }) {
   return (
-    <article className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-ink-900 to-ink-950 p-8 shadow-elevated transition-all duration-500 hover:-translate-y-1 hover:border-white/25 hover:shadow-glow-strong md:p-10">
+    <article className="group relative overflow-hidden rounded-3xl border border-mint-300/15 bg-gradient-to-b from-ink-800/80 to-ink-950/80 p-8 shadow-elevated transition-all duration-500 hover:-translate-y-1 hover:border-mint-300/40 hover:shadow-glow-strong md:p-10">
       {/* hover glow */}
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-        <div className="absolute -inset-px rounded-3xl bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_60%)]" />
+        <div className="absolute -inset-px rounded-3xl bg-[radial-gradient(circle_at_top,rgba(128,214,151,0.22),transparent_60%)]" />
       </div>
 
       {/* accent visual */}
-      <div className="pointer-events-none absolute right-0 top-0 h-40 w-40 opacity-30 transition-opacity duration-500 group-hover:opacity-60">
+      <div className="pointer-events-none absolute right-0 top-0 h-40 w-40 opacity-40 transition-opacity duration-500 group-hover:opacity-80">
         {accent === "lines" ? (
           <svg viewBox="0 0 160 160" className="h-full w-full">
             {Array.from({ length: 14 }).map((_, i) => (
@@ -114,8 +114,8 @@ function Card({
                 y1="0"
                 x2="160"
                 y2={i * 12}
-                stroke="#ffffff"
-                strokeOpacity={0.5 - i * 0.03}
+                stroke="#80d697"
+                strokeOpacity={0.55 - i * 0.035}
               />
             ))}
           </svg>
@@ -123,7 +123,7 @@ function Card({
           <svg viewBox="0 0 160 160" className="h-full w-full">
             <defs>
               <pattern id="dotsA" width="12" height="12" patternUnits="userSpaceOnUse">
-                <circle cx="1.5" cy="1.5" r="1" fill="#ffffff" opacity="0.4" />
+                <circle cx="1.5" cy="1.5" r="1" fill="#80d697" opacity="0.55" />
               </pattern>
             </defs>
             <rect width="160" height="160" fill="url(#dotsA)" />
@@ -131,17 +131,17 @@ function Card({
         )}
       </div>
 
-      <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-ink-300">
+      <span className="inline-flex items-center gap-2 rounded-full border border-mint-300/25 bg-white/[0.04] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-mint-200">
         {eyebrow}
       </span>
       <h3 className="mt-5 font-display text-2xl font-semibold leading-tight text-white md:text-3xl">
         {title}
       </h3>
-      <p className="mt-4 max-w-lg text-base leading-relaxed text-ink-200">{body}</p>
+      <p className="mt-4 max-w-lg text-base leading-relaxed text-ink-100">{body}</p>
 
-      <div className="mt-8 flex items-center gap-3 text-sm text-ink-300 transition-colors duration-300 group-hover:text-white">
+      <div className="mt-8 flex items-center gap-3 text-sm text-mint-200 transition-colors duration-300 group-hover:text-white">
         Conocer más
-        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/15 transition-transform duration-500 group-hover:translate-x-1 group-hover:bg-white group-hover:text-black">
+        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-mint-300/30 transition-transform duration-500 group-hover:translate-x-1 group-hover:bg-mint-500 group-hover:text-ink-950">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
             <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -161,13 +161,13 @@ function Pillar({
   icon: React.ReactNode;
 }) {
   return (
-    <div className="group relative h-full overflow-hidden rounded-2xl border border-white/10 bg-ink-900/60 p-6 transition-all duration-500 hover:border-white/30 hover:bg-ink-900">
-      <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-white shadow-inner-soft transition-all duration-500 group-hover:bg-white group-hover:text-black">
+    <div className="group relative h-full overflow-hidden rounded-2xl border border-mint-300/15 bg-ink-900/60 p-6 transition-all duration-500 hover:border-mint-300/45 hover:bg-ink-900">
+      <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-mint-300/20 bg-white/[0.03] text-mint-300 shadow-inner-soft transition-all duration-500 group-hover:bg-mint-500 group-hover:text-ink-950">
         {icon}
       </div>
       <h4 className="font-display text-lg font-semibold text-white">{title}</h4>
-      <p className="mt-2 text-sm leading-relaxed text-ink-300">{text}</p>
-      <div className="pointer-events-none absolute inset-x-6 bottom-0 h-px origin-left scale-x-0 bg-gradient-to-r from-white via-white/40 to-transparent transition-transform duration-700 group-hover:scale-x-100" />
+      <p className="mt-2 text-sm leading-relaxed text-ink-200">{text}</p>
+      <div className="pointer-events-none absolute inset-x-6 bottom-0 h-px origin-left scale-x-0 bg-gradient-to-r from-mint-300 via-mint-400/50 to-transparent transition-transform duration-700 group-hover:scale-x-100" />
     </div>
   );
 }

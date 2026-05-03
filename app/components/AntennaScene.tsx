@@ -1,5 +1,5 @@
 /**
- * Pure-SVG antenna field — black & white, no external assets.
+ * Pure-SVG antenna field — navy sky with mint signal accents.
  * Replaces the original neon-tower photo while preserving the same vibe:
  * vertical structures emitting signal lines across a horizon.
  */
@@ -24,29 +24,35 @@ export default function AntennaScene() {
     >
       <defs>
         <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#0a0a0a" />
-          <stop offset="60%" stopColor="#0f0f0f" />
-          <stop offset="100%" stopColor="#1a1a1a" />
+          <stop offset="0%" stopColor="#000c32" />
+          <stop offset="60%" stopColor="#0c1c4a" />
+          <stop offset="100%" stopColor="#18234b" />
         </linearGradient>
 
         <radialGradient id="halo" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#ffffff" stopOpacity="0.5" />
-          <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+          <stop offset="0%" stopColor="#80d697" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="#80d697" stopOpacity="0" />
         </radialGradient>
 
         <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
-          <stop offset="50%" stopColor="#ffffff" stopOpacity="0.85" />
-          <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+          <stop offset="0%" stopColor="#80d697" stopOpacity="0" />
+          <stop offset="50%" stopColor="#a3e3b3" stopOpacity="0.95" />
+          <stop offset="100%" stopColor="#80d697" stopOpacity="0" />
         </linearGradient>
 
         <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#0d0d0d" />
-          <stop offset="100%" stopColor="#000000" />
+          <stop offset="0%" stopColor="#0c1c4a" />
+          <stop offset="100%" stopColor="#000c32" />
         </linearGradient>
 
         <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" strokeOpacity="0.05" strokeWidth="0.6" />
+          <path
+            d="M 40 0 L 0 0 0 40"
+            fill="none"
+            stroke="#a3e3b3"
+            strokeOpacity="0.06"
+            strokeWidth="0.6"
+          />
         </pattern>
       </defs>
 
@@ -58,16 +64,26 @@ export default function AntennaScene() {
       {Array.from({ length: 50 }).map((_, i) => {
         const x = (i * 73) % 980;
         const y = (i * 41) % 280;
-        const r = (i % 3 === 0 ? 1.2 : 0.6);
-        return <circle key={i} cx={x} cy={y} r={r} fill="#ffffff" opacity={0.35 + ((i % 5) / 10)} />;
+        const r = i % 3 === 0 ? 1.2 : 0.6;
+        const isMint = i % 5 === 0;
+        return (
+          <circle
+            key={i}
+            cx={x}
+            cy={y}
+            r={r}
+            fill={isMint ? "#80d697" : "#dde3f0"}
+            opacity={0.35 + ((i % 5) / 10)}
+          />
+        );
       })}
 
-      {/* Horizon haze */}
-      <ellipse cx="490" cy="340" rx="560" ry="40" fill="url(#halo)" opacity="0.6" />
+      {/* Horizon mint haze */}
+      <ellipse cx="490" cy="340" rx="560" ry="40" fill="url(#halo)" opacity="0.85" />
 
       {/* Ground */}
       <rect y="340" width="980" height="120" fill="url(#ground)" />
-      <line x1="0" y1="340" x2="980" y2="340" stroke="#ffffff" strokeOpacity="0.18" />
+      <line x1="0" y1="340" x2="980" y2="340" stroke="#80d697" strokeOpacity="0.35" />
 
       {/* Signal arcs between tops of towers */}
       {towers.slice(0, -1).map((t, i) => {
@@ -84,8 +100,8 @@ export default function AntennaScene() {
               d={`M ${x1} ${y1} Q ${cx} ${cy} ${x2} ${y2}`}
               fill="none"
               stroke="url(#signal)"
-              strokeWidth="1.2"
-              opacity="0.85"
+              strokeWidth="1.4"
+              opacity="0.9"
             >
               <animate
                 attributeName="stroke-dasharray"
@@ -106,8 +122,8 @@ export default function AntennaScene() {
         return (
           <g key={`t-${i}`}>
             {/* Lattice frame */}
-            <line x1={t.x - w / 2} y1={baseY} x2={t.x} y2={topY} stroke="#ffffff" strokeOpacity="0.55" strokeWidth="0.9" />
-            <line x1={t.x + w / 2} y1={baseY} x2={t.x} y2={topY} stroke="#ffffff" strokeOpacity="0.55" strokeWidth="0.9" />
+            <line x1={t.x - w / 2} y1={baseY} x2={t.x} y2={topY} stroke="#dde3f0" strokeOpacity="0.55" strokeWidth="0.9" />
+            <line x1={t.x + w / 2} y1={baseY} x2={t.x} y2={topY} stroke="#dde3f0" strokeOpacity="0.55" strokeWidth="0.9" />
             <line x1={t.x} y1={baseY} x2={t.x} y2={topY} stroke="#ffffff" strokeOpacity="0.85" strokeWidth="1" />
 
             {/* Cross-bracing */}
@@ -117,19 +133,19 @@ export default function AntennaScene() {
               const segW = w * (1 - ratio * 0.85);
               return (
                 <g key={k}>
-                  <line x1={t.x - segW / 2} y1={y} x2={t.x + segW / 2} y2={y} stroke="#ffffff" strokeOpacity="0.35" strokeWidth="0.7" />
-                  <line x1={t.x - segW / 2} y1={y} x2={t.x + segW / 2} y2={y - t.h / 12} stroke="#ffffff" strokeOpacity="0.18" strokeWidth="0.5" />
+                  <line x1={t.x - segW / 2} y1={y} x2={t.x + segW / 2} y2={y} stroke="#b8c2dc" strokeOpacity="0.35" strokeWidth="0.7" />
+                  <line x1={t.x - segW / 2} y1={y} x2={t.x + segW / 2} y2={y - t.h / 12} stroke="#8693c0" strokeOpacity="0.22" strokeWidth="0.5" />
                 </g>
               );
             })}
 
-            {/* Beacon */}
-            <circle cx={t.x} cy={topY} r="3" fill="#ffffff">
-              <animate attributeName="opacity" values="0.3;1;0.3" dur={`${2 + (i % 3) * 0.4}s`} repeatCount="indefinite" />
+            {/* Mint beacon */}
+            <circle cx={t.x} cy={topY} r="3" fill="#80d697">
+              <animate attributeName="opacity" values="0.4;1;0.4" dur={`${2 + (i % 3) * 0.4}s`} repeatCount="indefinite" />
             </circle>
-            <circle cx={t.x} cy={topY} r="6" fill="none" stroke="#ffffff" strokeOpacity="0.4">
+            <circle cx={t.x} cy={topY} r="6" fill="none" stroke="#80d697" strokeOpacity="0.6">
               <animate attributeName="r" values="3;14;3" dur={`${3 + (i % 4) * 0.5}s`} repeatCount="indefinite" />
-              <animate attributeName="opacity" values="0.6;0;0.6" dur={`${3 + (i % 4) * 0.5}s`} repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.7;0;0.7" dur={`${3 + (i % 4) * 0.5}s`} repeatCount="indefinite" />
             </circle>
 
             {/* Reflection */}
@@ -138,16 +154,16 @@ export default function AntennaScene() {
               y1={baseY}
               x2={t.x}
               y2={baseY + 30}
-              stroke="#ffffff"
-              strokeOpacity="0.12"
+              stroke="#80d697"
+              strokeOpacity="0.18"
               strokeWidth="0.8"
             />
           </g>
         );
       })}
 
-      {/* Foreground vignette */}
-      <rect width="980" height="460" fill="url(#halo)" opacity="0.05" />
+      {/* Foreground mint vignette */}
+      <rect width="980" height="460" fill="url(#halo)" opacity="0.07" />
     </svg>
   );
 }

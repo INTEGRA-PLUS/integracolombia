@@ -34,10 +34,10 @@ export default function Logo({ size = 36, withText = true, className = "" }: Log
             strokeWidth="1.4"
             strokeDasharray="3 6"
           />
-          <circle cx="32" cy="6" r="2.4" fill="#ffffff" />
-          <circle cx="58" cy="32" r="1.8" fill="#ffffff" opacity="0.6" />
-          <circle cx="32" cy="58" r="1.8" fill="#ffffff" opacity="0.6" />
-          <circle cx="6" cy="32" r="1.8" fill="#ffffff" opacity="0.6" />
+          <circle cx="32" cy="6" r="2.4" fill="#80d697" />
+          <circle cx="58" cy="32" r="1.8" fill="#80d697" opacity="0.7" />
+          <circle cx="32" cy="58" r="1.8" fill="#80d697" opacity="0.7" />
+          <circle cx="6" cy="32" r="1.8" fill="#80d697" opacity="0.7" />
         </svg>
 
         {/* Inner mark */}
@@ -48,12 +48,12 @@ export default function Logo({ size = 36, withText = true, className = "" }: Log
           className="relative"
         >
           <line x1="32" y1="10" x2="32" y2="54" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
-          <circle cx="32" cy="10" r="3.2" fill="#ffffff" />
+          <circle cx="32" cy="10" r="3.2" fill="#80d697" />
           <circle cx="32" cy="54" r="3.2" fill="#ffffff" />
         </svg>
 
-        {/* Soft glow */}
-        <span className="absolute inset-0 rounded-full bg-white/5 blur-xl" />
+        {/* Soft mint glow */}
+        <span className="absolute inset-0 rounded-full bg-mint-500/10 blur-xl" />
       </div>
 
       {withText && (

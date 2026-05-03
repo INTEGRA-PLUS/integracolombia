@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #050505;
-  --foreground: #f6f6f6;
+  --background: #000c32;
+  --foreground: #f4f6fb;
+  --mint: #80d697;
+  --mint-strong: #a3e3b3;
+  --navy-mid: #18234b;
 }
 
 * {
@@ -29,34 +32,41 @@ body {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #000c32;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #2a2a2a, #0a0a0a);
+  background: linear-gradient(180deg, #2a3a78, #06143f);
   border-radius: 8px;
-  border: 2px solid #050505;
+  border: 2px solid #000c32;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #3a3a3a, #1a1a1a);
+  background: linear-gradient(180deg, #80d697, #2a3a78);
 }
 
 /* Selection */
 ::selection {
-  background: #ffffff;
-  color: #000000;
+  background: #80d697;
+  color: #000c32;
 }
 
 /* Reusable utilities */
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(180deg, #ffffff 0%, #888888 90%);
+    background: linear-gradient(180deg, #ffffff 0%, #c2edcd 60%, #80d697 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .text-gradient-soft {
-    background: linear-gradient(180deg, #f6f6f6 0%, #c0c0c0 100%);
+    background: linear-gradient(180deg, #f4f6fb 0%, #b8c2dc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-mint {
+    background: linear-gradient(135deg, #ddf3e3 0%, #80d697 60%, #5cbf78 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -65,13 +75,13 @@ body {
   .border-gradient {
     border: 1px solid transparent;
     background:
-      linear-gradient(#0a0a0a, #0a0a0a) padding-box,
-      linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.02))
+      linear-gradient(#06143f, #06143f) padding-box,
+      linear-gradient(135deg, rgba(128, 214, 151, 0.45), rgba(128, 214, 151, 0.05))
         border-box;
   }
 
   .glass {
-    background: rgba(10, 10, 10, 0.55);
+    background: rgba(6, 20, 63, 0.55);
     backdrop-filter: blur(18px) saturate(140%);
     -webkit-backdrop-filter: blur(18px) saturate(140%);
   }
@@ -79,11 +89,11 @@ body {
   .shimmer-text {
     background: linear-gradient(
       90deg,
-      #6b6b6b 0%,
+      #c2edcd 0%,
       #ffffff 25%,
-      #ffffff 50%,
-      #6b6b6b 75%,
-      #6b6b6b 100%
+      #80d697 50%,
+      #c2edcd 75%,
+      #80d697 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -94,9 +104,18 @@ body {
 
   .grid-bg {
     background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(195, 220, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(195, 220, 255, 0.06) 1px, transparent 1px);
     background-size: 56px 56px;
+  }
+
+  .brand-gradient-bg {
+    background: linear-gradient(
+      180deg,
+      rgb(0, 12, 50) 30%,
+      rgb(24, 35, 75) 70%,
+      rgb(128, 214, 151) 100%
+    );
   }
 
   .mask-fade-y {
@@ -116,7 +135,7 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.05;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
