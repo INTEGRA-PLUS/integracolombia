@@ -1,4 +1,5 @@
 import Crm from "./components/Crm";
+import Clientes from "./components/Clientes";
 import CtaFinal from "./components/CtaFinal";
 import Ecosistema from "./components/Ecosistema";
 import Faq from "./components/Faq";
@@ -17,6 +18,7 @@ export default function Home() {
     <main className="relative noise overflow-hidden bg-ink-950 text-ink-50">
       <Navbar />
       <Hero />
+      <Clientes />
       <Ecosistema />
       <PlataformaISP />
       <Crm />

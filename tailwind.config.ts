@@ -54,7 +54,8 @@ const config: Config = {
         "spin-slow": "spin 28s linear infinite",
         shimmer: "shimmer 3.2s linear infinite",
         pulseRing: "pulseRing 3.5s ease-out infinite",
-        marquee: "marquee 40s linear infinite",
+        marquee: "marquee 60s linear infinite",
+        "marquee-reversa": "marquee 60s linear infinite reverse",
         "tilt-in": "tiltIn 0.9s cubic-bezier(0.22,1,0.36,1) both",
       },
       keyframes: {
