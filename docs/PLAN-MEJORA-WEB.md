@@ -23,6 +23,8 @@ Una sola página larga, con la marca de siempre (navy + menta) y todo lo que hoy
 
 - **Contacto:** solo WhatsApp +57 320 690 9290. 14 botones, cada uno con su mensaje escrito
   (así se sabe desde qué sección llegó el prospecto) + botón flotante.
+- **Marca:** logos oficiales (Integra, Integra CRM, Integra Pay) en versión transparente en `public/marca/`,
+  favicon con el símbolo y el verde del sitio igualado al del logo (`#7ACC4A`).
 - **SEO:** título y descripción nuevos, Open Graph, datos estructurados de la organización.
 - **Accesibilidad:** con «reducir movimiento» activo, el contenido se ve sin animaciones.
 - **No se publicó:** precios (la landing del CRM y el código no coinciden), medios de pago

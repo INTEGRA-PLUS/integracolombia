@@ -5,8 +5,8 @@
 :root {
   --background: #000c32;
   --foreground: #f4f6fb;
-  --mint: #80d697;
-  --mint-strong: #a3e3b3;
+  --mint: #7acc4a;
+  --mint-strong: #98d96f;
   --navy-mid: #18234b;
 }
 
@@ -40,19 +40,19 @@ body {
   border: 2px solid #000c32;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #80d697, #2a3a78);
+  background: linear-gradient(180deg, #7acc4a, #2a3a78);
 }
 
 /* Selection */
 ::selection {
-  background: #80d697;
+  background: #7acc4a;
   color: #000c32;
 }
 
 /* Reusable utilities */
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(180deg, #ffffff 0%, #c2edcd 60%, #80d697 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #b9e6a0 60%, #7acc4a 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -66,7 +66,7 @@ body {
   }
 
   .text-gradient-mint {
-    background: linear-gradient(135deg, #ddf3e3 0%, #80d697 60%, #5cbf78 100%);
+    background: linear-gradient(135deg, #daf2cc 0%, #7acc4a 60%, #5fb534 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -76,7 +76,7 @@ body {
     border: 1px solid transparent;
     background:
       linear-gradient(#06143f, #06143f) padding-box,
-      linear-gradient(135deg, rgba(128, 214, 151, 0.45), rgba(128, 214, 151, 0.05))
+      linear-gradient(135deg, rgba(122, 204, 74, 0.45), rgba(122, 204, 74, 0.05))
         border-box;
   }
 
@@ -89,11 +89,11 @@ body {
   .shimmer-text {
     background: linear-gradient(
       90deg,
-      #c2edcd 0%,
+      #b9e6a0 0%,
       #ffffff 25%,
-      #80d697 50%,
-      #c2edcd 75%,
-      #80d697 100%
+      #7acc4a 50%,
+      #b9e6a0 75%,
+      #7acc4a 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -114,7 +114,7 @@ body {
       180deg,
       rgb(0, 12, 50) 30%,
       rgb(24, 35, 75) 70%,
-      rgb(128, 214, 151) 100%
+      rgb(122, 204, 74) 100%
     );
   }
 

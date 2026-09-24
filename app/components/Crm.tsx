@@ -26,6 +26,10 @@ export default function Crm() {
   return (
     <section id="crm" className="relative py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
+        <Reveal className="mb-10 flex justify-center">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/marca/integra-crm.png" alt="Integra CRM — Todo tu WhatsApp, en un solo lugar" className="h-32 w-auto sm:h-40" loading="lazy" />
+        </Reveal>
         <SectionHeader eyebrow="CRM + Inteligencia artificial" title="Tu WhatsApp atiende," highlight="cobra y resuelve 24/7">
           Integra CRM convierte tu línea de WhatsApp en un centro de atención con IA conectado a tu ISP. El
           cliente pregunta por su factura, reporta una falla o paga… y se resuelve sin esperar a un asesor.

@@ -18,6 +18,10 @@ export default function IntegraPay() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
           <div>
+            <Reveal className="mb-8">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/marca/integra-pay.png" alt="Integra Pay" className="h-12 w-auto sm:h-14" loading="lazy" />
+            </Reveal>
             <SectionHeader align="left" eyebrow="Integra Pay · pasarela de pagos" title="Cobra en línea y" highlight="deja de perseguir pagos">
               La pasarela de pagos de Integra está conectada a tu facturación. Tus clientes pagan desde el
               celular y tú no tienes que conciliar nada a mano.

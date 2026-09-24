@@ -151,6 +151,10 @@ export default function PlataformaISP() {
     <section id="isp" className="relative py-16 md:py-24">
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-ink-900/60 to-transparent" />
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
+        <Reveal className="mb-10 flex justify-center">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/marca/integra.png" alt="Integra — Todo tu ISP, en un solo lugar" className="h-28 w-auto sm:h-36" loading="lazy" />
+        </Reveal>
         <SectionHeader eyebrow="Software para ISP" title="Una plataforma para" highlight="toda tu operación">
           Diez módulos que cubren desde el router hasta la contabilidad. Todo conectado: lo que pasa en uno se
           refleja en los demás.

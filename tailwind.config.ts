@@ -26,21 +26,21 @@ const config: Config = {
           100: "#dde3f0",
           50: "#f4f6fb",
         },
-        // mint accent — derived from rgb(128, 214, 151)
+        // verde de marca — el del logo oficial, rgb(122, 204, 74)
         mint: {
-          700: "#3fa05c",
-          600: "#5cbf78",
-          500: "#80d697", // rgb(128, 214, 151)
-          400: "#a3e3b3",
-          300: "#c2edcd",
-          200: "#ddf3e3",
-          100: "#ecf9f0",
+          700: "#4a9a26",
+          600: "#5fb534",
+          500: "#7acc4a", // rgb(122, 204, 74)
+          400: "#98d96f",
+          300: "#b9e6a0",
+          200: "#daf2cc",
+          100: "#eef9e7",
         },
       },
       boxShadow: {
-        glow: "0 0 40px rgba(128, 214, 151, 0.12), 0 0 120px rgba(128, 214, 151, 0.06)",
+        glow: "0 0 40px rgba(122, 204, 74, 0.12), 0 0 120px rgba(122, 204, 74, 0.06)",
         "glow-strong":
-          "0 0 60px rgba(128, 214, 151, 0.28), 0 0 180px rgba(128, 214, 151, 0.14)",
+          "0 0 60px rgba(122, 204, 74, 0.28), 0 0 180px rgba(122, 204, 74, 0.14)",
         "glow-cool":
           "0 0 50px rgba(80, 120, 220, 0.25), 0 0 140px rgba(80, 120, 220, 0.12)",
         "inner-soft": "inset 0 1px 0 0 rgba(255,255,255,0.08)",
@@ -97,11 +97,11 @@ const config: Config = {
         "grid-pattern":
           "linear-gradient(to right, rgba(195,220,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(195,220,255,0.06) 1px, transparent 1px)",
         "radial-fade":
-          "radial-gradient(ellipse at center, rgba(128,214,151,0.18) 0%, transparent 60%)",
+          "radial-gradient(ellipse at center, rgba(122, 204, 74,0.18) 0%, transparent 60%)",
         "brand-gradient":
-          "linear-gradient(180deg, rgb(0, 12, 50) 30%, rgb(24, 35, 75) 70%, rgb(128, 214, 151) 100%)",
+          "linear-gradient(180deg, rgb(0, 12, 50) 30%, rgb(24, 35, 75) 70%, rgb(122, 204, 74) 100%)",
         "brand-gradient-soft":
-          "linear-gradient(180deg, rgb(0, 12, 50) 0%, rgb(24, 35, 75) 60%, rgba(128, 214, 151, 0.35) 100%)",
+          "linear-gradient(180deg, rgb(0, 12, 50) 0%, rgb(24, 35, 75) 60%, rgba(122, 204, 74, 0.35) 100%)",
         "noise":
           "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E\")",
       },

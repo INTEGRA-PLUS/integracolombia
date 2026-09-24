@@ -30,14 +30,14 @@ export default function AntennaScene() {
         </linearGradient>
 
         <radialGradient id="halo" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#80d697" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="#80d697" stopOpacity="0" />
+          <stop offset="0%" stopColor="#7acc4a" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="#7acc4a" stopOpacity="0" />
         </radialGradient>
 
         <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#80d697" stopOpacity="0" />
-          <stop offset="50%" stopColor="#a3e3b3" stopOpacity="0.95" />
-          <stop offset="100%" stopColor="#80d697" stopOpacity="0" />
+          <stop offset="0%" stopColor="#7acc4a" stopOpacity="0" />
+          <stop offset="50%" stopColor="#98d96f" stopOpacity="0.95" />
+          <stop offset="100%" stopColor="#7acc4a" stopOpacity="0" />
         </linearGradient>
 
         <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
@@ -49,7 +49,7 @@ export default function AntennaScene() {
           <path
             d="M 40 0 L 0 0 0 40"
             fill="none"
-            stroke="#a3e3b3"
+            stroke="#98d96f"
             strokeOpacity="0.06"
             strokeWidth="0.6"
           />
@@ -72,7 +72,7 @@ export default function AntennaScene() {
             cx={x}
             cy={y}
             r={r}
-            fill={isMint ? "#80d697" : "#dde3f0"}
+            fill={isMint ? "#7acc4a" : "#dde3f0"}
             opacity={0.35 + ((i % 5) / 10)}
           />
         );
@@ -83,7 +83,7 @@ export default function AntennaScene() {
 
       {/* Ground */}
       <rect y="340" width="980" height="120" fill="url(#ground)" />
-      <line x1="0" y1="340" x2="980" y2="340" stroke="#80d697" strokeOpacity="0.35" />
+      <line x1="0" y1="340" x2="980" y2="340" stroke="#7acc4a" strokeOpacity="0.35" />
 
       {/* Signal arcs between tops of towers */}
       {towers.slice(0, -1).map((t, i) => {
@@ -140,10 +140,10 @@ export default function AntennaScene() {
             })}
 
             {/* Mint beacon */}
-            <circle cx={t.x} cy={topY} r="3" fill="#80d697">
+            <circle cx={t.x} cy={topY} r="3" fill="#7acc4a">
               <animate attributeName="opacity" values="0.4;1;0.4" dur={`${2 + (i % 3) * 0.4}s`} repeatCount="indefinite" />
             </circle>
-            <circle cx={t.x} cy={topY} r="6" fill="none" stroke="#80d697" strokeOpacity="0.6">
+            <circle cx={t.x} cy={topY} r="6" fill="none" stroke="#7acc4a" strokeOpacity="0.6">
               <animate attributeName="r" values="3;14;3" dur={`${3 + (i % 4) * 0.5}s`} repeatCount="indefinite" />
               <animate attributeName="opacity" values="0.7;0;0.7" dur={`${3 + (i % 4) * 0.5}s`} repeatCount="indefinite" />
             </circle>
@@ -154,7 +154,7 @@ export default function AntennaScene() {
               y1={baseY}
               x2={t.x}
               y2={baseY + 30}
-              stroke="#80d697"
+              stroke="#7acc4a"
               strokeOpacity="0.18"
               strokeWidth="0.8"
             />
