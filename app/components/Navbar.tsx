@@ -1,13 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { wa } from "../lib/contacto";
 import Logo from "./Logo";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 const links = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#servicios", label: "Servicios" },
-  { href: "#soluciones", label: "Soluciones" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "#isp", label: "Plataforma ISP" },
+  { href: "#crm", label: "CRM + IA" },
+  { href: "#pagos", label: "Integra Pay" },
+  { href: "#web", label: "Páginas web" },
+  { href: "#migracion", label: "Migración" },
+  { href: "#faq", label: "Preguntas" },
 ];
 
 export default function Navbar() {
@@ -24,85 +28,81 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "py-3 bg-ink-950/75 backdrop-blur-xl border-b border-mint-300/10 shadow-[0_8px_32px_rgba(0,4,24,0.55)]"
-          : "py-6 bg-transparent"
+        scrolled || open
+          ? "py-3 bg-ink-950/85 backdrop-blur-xl border-b border-mint-300/10 shadow-[0_8px_32px_rgba(0,4,24,0.55)]"
+          : "py-5 bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <a href="#inicio" className="group flex items-center">
-          <Logo size={38} />
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 sm:px-6">
+        <a href="#inicio" className="flex shrink-0 items-center" aria-label="Integra — inicio">
+          <Logo size={36} />
         </a>
 
-        {/* Desktop links */}
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-0.5 lg:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="group relative inline-flex items-center px-4 py-2 text-sm font-medium tracking-wide text-ink-200 transition-colors duration-300 hover:text-white"
-              >
-                <span>{l.label}</span>
-                <span className="pointer-events-none absolute inset-x-4 -bottom-0.5 h-px origin-left scale-x-0 bg-gradient-to-r from-mint-400 via-mint-300 to-transparent transition-transform duration-500 group-hover:scale-x-100" />
-              </a>
-            </li>
-          ))}
-          <li className="ml-3">
-            <a
-              href="#contacto"
-              className="group relative inline-flex overflow-hidden rounded-full border border-mint-300/30 bg-mint-500/10 px-5 py-2 text-sm font-medium tracking-wide text-white shadow-glow transition-all duration-300 hover:bg-mint-500 hover:text-ink-950 hover:shadow-glow-strong"
-            >
-              <span className="relative z-10">Hablemos</span>
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
-            </a>
-          </li>
-        </ul>
-
-        {/* Mobile toggle */}
-        <button
-          aria-label="Abrir menú"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="relative h-10 w-10 rounded-full border border-white/10 text-white md:hidden"
-        >
-          <span
-            className={`absolute left-2.5 right-2.5 top-1/2 h-px bg-white transition-transform duration-300 ${
-              open ? "translate-y-0 rotate-45" : "-translate-y-1.5"
-            }`}
-          />
-          <span
-            className={`absolute left-2.5 right-2.5 top-1/2 h-px bg-white transition-opacity duration-200 ${
-              open ? "opacity-0" : "opacity-100"
-            }`}
-          />
-          <span
-            className={`absolute left-2.5 right-2.5 top-1/2 h-px bg-white transition-transform duration-300 ${
-              open ? "translate-y-0 -rotate-45" : "translate-y-1.5"
-            }`}
-          />
-        </button>
-      </nav>
-
-      {/* Mobile menu */}
-      <div
-        className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-500 ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <ul className="mx-6 mt-4 space-y-1 rounded-2xl border border-white/10 bg-ink-900/80 p-3 backdrop-blur-xl">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="block rounded-xl px-4 py-3 text-sm text-ink-200 transition-colors hover:bg-white/5 hover:text-white"
+                className="rounded-full px-3.5 py-2 text-sm font-medium text-ink-200 transition-colors hover:bg-white/[0.05] hover:text-white"
               >
                 {l.label}
               </a>
             </li>
           ))}
         </ul>
-      </div>
+
+        <div className="flex items-center gap-2">
+          <a
+            href={wa("Hola, vengo de la página de Integra y quiero hablar con un asesor.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden items-center gap-2 rounded-full bg-mint-500 px-5 py-2.5 text-sm font-semibold text-ink-950 shadow-glow transition-all hover:-translate-y-0.5 hover:bg-mint-400 sm:inline-flex"
+          >
+            <WhatsAppIcon className="h-4 w-4" />
+            Hablar por WhatsApp
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white lg:hidden"
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={open}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              {open ? <path d="M6 6l12 12M18 6 6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      {open && (
+        <div className="mx-auto max-w-7xl px-5 pb-4 pt-2 lg:hidden">
+          <ul className="grid gap-1 rounded-2xl border border-white/10 bg-ink-900/90 p-2">
+            {links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-xl px-4 py-3 text-sm font-medium text-ink-100 hover:bg-white/[0.06]"
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a
+                href={wa("Hola, vengo de la página de Integra y quiero hablar con un asesor.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 flex items-center justify-center gap-2 rounded-xl bg-mint-500 px-4 py-3 text-sm font-semibold text-ink-950"
+              >
+                <WhatsAppIcon className="h-4 w-4" />
+                Hablar por WhatsApp
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

@@ -153,3 +153,21 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Quien pide menos movimiento ve el contenido de una, sin animaciones. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-tilt-in,
+  .animate-marquee,
+  .animate-spin-slow,
+  .animate-pulseRing,
+  .shimmer-text {
+    animation: none;
+  }
+}

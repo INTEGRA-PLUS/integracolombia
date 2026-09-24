@@ -14,23 +14,48 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
+const descripcion =
+  "Software para ISP con red MikroTik y OLT, facturación electrónica DIAN, cobro en línea con Integra Pay y CRM con inteligencia artificial para WhatsApp. Corte y reconexión automáticos.";
+
 export const metadata: Metadata = {
-  title: "Integra — Software Especializado para ISP",
-  description:
-    "Optimiza la operación de tu ISP con la plataforma avanzada de Integra Colombia. Software integral para empresas de telecomunicaciones.",
+  metadataBase: new URL("https://integracolombia.co"),
+  title: "Integra — Software para ISP, CRM con IA y pagos en línea",
+  description: descripcion,
   keywords: [
-    "ISP",
-    "Software ISP",
+    "software para ISP",
+    "software para proveedores de internet",
+    "MikroTik",
+    "facturación electrónica DIAN",
+    "CRM WhatsApp",
+    "inteligencia artificial",
+    "pasarela de pagos",
     "Integra Colombia",
-    "Telecomunicaciones",
-    "Plataforma ISP",
   ],
   authors: [{ name: "Integra Colombia S.A.S." }],
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Integra — Software Especializado para ISP",
-    description:
-      "Optimiza la operación de tu ISP con la plataforma avanzada de Integra Colombia.",
+    title: "Integra — Todo tu ISP en un solo ecosistema",
+    description: descripcion,
+    url: "https://integracolombia.co",
+    siteName: "Integra Colombia",
+    locale: "es_CO",
     type: "website",
+  },
+  twitter: { card: "summary_large_image", title: "Integra — Todo tu ISP en un solo ecosistema", description: descripcion },
+};
+
+const organizacion = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Integra Colombia S.A.S.",
+  url: "https://integracolombia.co",
+  description: descripcion,
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+57-320-690-9290",
+    contactType: "sales",
+    areaServed: "CO",
+    availableLanguage: "es",
   },
 };
 
@@ -40,6 +65,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-ink-950 text-ink-50 font-sans antialiased">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizacion) }} />
         {children}
       </body>
     </html>
