@@ -18,6 +18,7 @@ const columnas = [
       { href: "#ecosistema", label: "Cómo funciona" },
       { href: "#migracion", label: "Migración asistida" },
       { href: "#faq", label: "Preguntas frecuentes" },
+      { href: "/trabaja-con-nosotros", label: "Trabaja con nosotros" },
     ],
   },
   {

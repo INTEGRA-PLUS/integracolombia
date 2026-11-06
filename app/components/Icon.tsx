@@ -24,6 +24,10 @@ const paths: Record<string, React.ReactNode> = {
   clock: (<><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>),
   layers: (<><path d="m12 3 9 5-9 5-9-5 9-5z" /><path d="m3 13 9 5 9-5" /></>),
   arrow: (<path d="M5 12h14M13 5l7 7-7 7" />),
+  bot: (<><rect x="4" y="8" width="16" height="12" rx="3" /><path d="M12 8V4M9 14h.01M15 14h.01M2 14h2M20 14h2" /></>),
+  git: (<><circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><circle cx="18" cy="8" r="2.5" /><path d="M6 8.5v7M18 10.5c0 4-6 3-11 6" /></>),
+  terminal: (<path d="M4 17l6-5-6-5M12 19h8" />),
+  upload: (<><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" /><path d="M14 3v6h6M12 18v-6M9 15l3-3 3 3" /></>),
 };
 
 export default function Icon({ name, className = "h-5 w-5" }: { name: keyof typeof paths | string; className?: string }) {
